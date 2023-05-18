@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #E2E2E2;
+  position: relative;
+}
+body header {
+  margin-bottom: -5rem;
+  border-bottom: 1px solid #000000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+body header .navBar {
+  max-width: 1000px;
+  padding: 0.6rem 0;
+  margin-inline: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* nav */
+  /* mixin animation for nav  */
+  /* mixin animation for nav  */
+}
+body header .navBar .logo h1 {
+  font-weight: 100;
+}
+body header .navBar .nav {
+  max-width: 1000px;
+  position: reletive;
+  /* navutton animation */
+}
+body header .navBar .nav .navButton {
+  background-color: rgba(0, 0, 0, 0);
+  overflow-x: hidden;
+  border: none;
+  border-radius: 50%;
+  width: 3.4rem;
+  height: 3.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+body header .navBar .nav .navButton .line {
+  width: 60%;
+  border-radius: 10px;
+  height: 1px;
+  background-color: #000000;
+  position: relative;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+body header .navBar .nav .navButton .line::before,
+body header .navBar .nav .navButton .line::after {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  background-color: #000000;
+  position: absolute;
+  content: "";
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+body header .navBar .nav .navButton .line::before {
+  transform: translateY(10px);
+  left: 0;
+}
+body header .navBar .nav .navButton .line::after {
+  transform: translateY(-10px);
+  left: 0;
+}
+body header .navBar .nav .navButton.open .line {
+  transform: translateX(-30px);
+  background: transparent;
+}
+body header .navBar .nav .navButton.open .line::before {
+  transform: rotate(45deg);
+  left: 30px;
+}
+body header .navBar .nav .navButton.open .line::after {
+  transform: rotate(-45deg);
+  left: 30px;
+}
+body header .navBar .menuContainr {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  overflow-x: hidden;
+  transition-duration: 0.3s;
+  animation-timing-function: ease-out;
+  transform: translateX(100%);
+}
+body header .navBar .menuContainr .menu {
+  margin-inline: auto;
+  max-width: 1000px;
+  row-gap: 1rem;
+  display: flex;
+  justify-content: end;
+}
+body header .navBar .menuContainr .menu .linksContainerMenu {
+  background-color: #000;
+  padding: 1rem;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: relative;
+}
+body header .navBar .menuContainr .menu .linksContainerMenu a {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  align-self: end;
+  text-decoration: none;
+  line-height: 2rem;
+  color: aliceblue;
+  border-bottom: 1px solid aliceblue;
+  width: 200px;
+}
+body header .navBar .menuContainr .menu .linksContainerMenu a:last-child {
+  border-bottom: none;
+}
+body header .navBar .menuContainerOpen {
+  transform: translateX(0);
+}
+body main .hero {
+  background-image: url("../img/hero.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 650px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  position: relative;
+  z-index: 5;
+}
+body main .hero .heroBlur {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 7;
+}
+body main .hero .heroTitleContainer {
+  max-width: 1000px;
+  width: 100%;
+  margin-inline: auto;
+}
+body main .hero .heroTitleContainer h1 {
+  font-size: 3rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.2rem;
+  color: #000;
+  z-index: 10;
+  position: relative;
+  padding: 1rem;
+  color: aliceblue;
+  background-color: #000;
+  display: inline-block;
+  margin: auto;
+}
+body main .place {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  padding-top: 2rem;
+}
+body main .place .chaild {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  border-radius: 40px;
+  background: #E2E2E2;
+  box-shadow: 11px 11px 22px #c0c0c0, -11px -11px 22px #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */
