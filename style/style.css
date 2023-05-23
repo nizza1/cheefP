@@ -9,6 +9,22 @@ body {
   background-color: #E2E2E2;
   position: relative;
 }
+body .cursorM {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgb(0, 85, 255);
+  border: 2px solid aliceblue;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: 0.09s;
+}
+body a:hover ~ .cursorM {
+  width: 4rem;
+  height: 4rem;
+}
 body header {
   margin-bottom: -5rem;
   border-bottom: 1px solid #000000;

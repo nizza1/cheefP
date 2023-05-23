@@ -41,6 +41,22 @@ body {
     background-color: $primary-background;
     position: relative;
     //scroll-behavior: smooth;
+    .cursorM {
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: rgb(0, 85, 255);
+        border: 2px solid aliceblue;
+        z-index: 1000;
+        transform: translate(-50%,-50%);
+        pointer-events: none;
+        transition: .09s;
+    }
+    a:hover ~ .cursorM {
+        width: 4rem;
+        height: 4rem;
+    }
     header {
         margin-bottom: -5rem;
         border-bottom: 1px solid $primary-color;
@@ -154,9 +170,9 @@ body {
                     border-bottom: none;
                 }
                }
-                
-                
+     
             }
+      
         }
 
         .menuContainerOpen {
