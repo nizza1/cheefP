@@ -14,7 +14,7 @@ body .cursorM {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: rgb(0, 85, 255);
+  background-color: rgb(0, 0, 0);
   border: 2px solid aliceblue;
   z-index: 1000;
   transform: translate(-50%, -50%);
