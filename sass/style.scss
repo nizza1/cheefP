@@ -1,4 +1,10 @@
+//import 
+@use 'mixin' as * ;
+@use 'global' as *;
+@forward 'header';
+@forward 'footer';
 
+//import 
 
 
 //Global values 
@@ -6,42 +12,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-//Global variables
-$primary-font: Helvetica, sans-serif;
-$primary-color: #000000;
-$primary-background: #E2E2E2;
-$max-width: 1000px;
-$center-inline: auto;
-
-
-//Global mixins 
-@mixin flex($flex: 1, $direction: row, $justify: center, $align: center, $wrap: wrap) {
-    display: flex;
-    flex: $flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-    flex-wrap: $wrap;
-  }
-
-  @mixin flexCenter($justify: center, $align: center){
-    display: flex;
-    justify-content:$justify ;
-    align-items: $align;
-  }
-
-@mixin blur($blur) {
-    backdrop-filter: blur($blur);
+    /* cursor: url('../icons/cursor.svg'), move; */
 }
 
 body {
     font-family: $primary-font;
     background-color: $primary-background;
     position: relative;
-    //scroll-behavior: smooth;
+    /* cursor: none; */
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
     .cursorM {
+        
         position: absolute;
         width: 1rem;
         height: 1rem;
@@ -51,147 +33,11 @@ body {
         z-index: 1000;
         transform: translate(-50%,-50%);
         pointer-events: none;
-        transition: .09s;
+        
     }
     a:hover ~ .cursorM {
         width: 4rem;
         height: 4rem;
-    }
-    header {
-        margin-bottom: -5rem;
-        border-bottom: 1px solid $primary-color;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-        backdrop-filter: blur(12px);
-        .navBar {
-            .logo h1{
-                font-weight: 100;
-            }
-            max-width: $max-width;
-            padding: .6rem 0 ;
-            margin-inline: auto;
-            @include flex(1, row, space-between, center, nowrap);
-            .nav{
-                max-width: $max-width;
-                position: reletive;
-            .navButton {
-            
-                background-color: #00000000;
-                overflow-x: hidden;
-                border: none;
-                border-radius: 50%;
-                width: 3.4rem;
-                height: 3.4rem;
-                @include flexCenter();
-                cursor: pointer;
-                .line {
-                    width: 60%;
-                    border-radius: 10px;
-                    height: 1px;
-                    background-color:$primary-color;
-                    position: relative;
-                    transition-duration: 0.3s;
-                    transition-timing-function: ease-out;
-                }
-            
-                .line::before,
-                .line::after {
-                width: 100%;
-                border-radius: 5px;
-                height: 100%;
-                background-color: $primary-color;
-                position: absolute;
-                content: "";
-                transition-duration: .3s;
-                transition-timing-function: ease-out;
-                }
-                .line::before {
-                transform: translateY(10px);
-                left: 0;
-                }
-                .line::after{
-                transform: translateY(-10px);
-                left: 0;
-                }
-            
-            }
-            
-            /* navutton animation */ 
-            .navButton.open .line {
-                transform: translateX(-30px);
-                background: transparent;
-            }
-            .navButton.open .line::before {
-                transform: rotate(45deg);
-                left: 30px;
-            }
-            .navButton.open .line::after {
-                transform: rotate(-45deg);
-                left: 30px;
-            }
-        }
-
-        .menuContainr{
-                width: 100%;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                overflow-x: hidden;
-                transition-duration: .3s;
-                animation-timing-function: ease-out;
-                transform: translateX(100%);
-            .menu {
-                margin-inline: auto;
-                max-width: $max-width;
-                row-gap: 1rem;
-                display: flex;
-                justify-content: end;
-                .linksContainerMenu{
-                background-color:  #000;
-                padding: 1rem;
-                border: 1px solid #000;
-                display: flex;
-                flex-direction: column;
-                width: 350px;
-                position: relative;
-                a {
-                    font-size: 1.4rem;
-                    padding: 1rem 0;
-                    align-self: end;
-                    text-decoration: none;
-                    line-height: 2rem;
-                    color: aliceblue;
-                    border-bottom: 1px solid aliceblue;
-                    width: 200px;
-                }
-                a:last-child {
-                    border-bottom: none;
-                }
-               }
-     
-            }
-      
-        }
-
-        .menuContainerOpen {
-            transform: translateX(0);
-        }
-        
-      
-            /* nav */ 
-            
-            /* mixin animation for nav  */
-            
-            @mixin iconAnimation {
-                transform: scale(1.1);
-                transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
-                
-            }
-            
-            /* mixin animation for nav  */
-        }
     }
 
     main {
@@ -242,6 +88,76 @@ body {
 
         }
 
+        .outContainer {
+            max-width: $max-width;
+            margin-inline: auto;
+        }
+
+        .anfebotsSatzOben {
+            border-bottom: $primery-border;
+           padding: 1rem 0;
+           margin: 3rem 0rem;
+           
+           background-color: $box-background ;
+
+             h1 {
+                @include title;
+                /* text-align: center; */
+             }
+      
+        }
+
+        .infosSContainer {
+            padding-bottom: 3rem;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 3rem;
+            h1 {
+                @include titleL;
+                line-height: 1.5;
+                span {
+                    line-height: 1.5;
+                    display: inline-block;
+                }
+               /*  text-align: center; */
+            }
+            .infosS {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                
+                div {
+                    @include boxShadow;
+                    @include standardCenter;
+                    /* border: 1px solid #c0c0c0; */
+                    border-radius: 50%;
+                    height: 170px;
+                    width: 170px;
+                    position: relative;
+                    .iconForInfos {
+                        position: absolute;
+                    
+                        @include blurS;
+                        height: 40px;
+                        width: 40px;
+                        top: 10px;
+                        left: 40%;
+                        border-radius: 50%;
+                       /*  transform: skew(-.2rad); */
+                        p {
+                            color:$font-light;
+                        }
+
+                    }
+                    p{
+                        max-width: 20ch;
+                        text-align: center;
+                        color: $font-light;
+                    }
+                }
+            }
+        }
 
 
         .place {
@@ -254,20 +170,36 @@ body {
             padding-top: 2rem;
            
             .chaild {
+                display: flex;
+                flex-wrap: wrap;
                 padding: 2rem;
                 width: 100%;
                 max-width: $max-width;
-                height: 400px;
+                height: fit-content;
                 border-radius: 40px;
                 background: #E2E2E2;
                 box-shadow:  11px 11px 22px #c0c0c0,
              -11px -11px 22px #ffffff;
+             .textContainerHomeBox {
+                max-width: 60ch;
+                border-right: $primery-border;
+                padding-right: 1rem;
+                h2 {
+                    @include titleL()
+                }
+                p {
+                    font-weight: 200;
+                }
+             }
       
             } 
         }
     }
     
 }
+
+
+
 
 
 

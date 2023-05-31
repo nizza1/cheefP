@@ -30,13 +30,13 @@ window.addEventListener('scroll', function() {
  });
 
  /*  CURSOR MENU */
-const menuCursor = document.querySelector('.cursorM');
+/* const cursorM = document.querySelector('.cursorM');
 
 document.addEventListener('mousemove', (e)=> {
-   menuCursor.style.left = e.pageX +'px';
+   cursorM.style.left = e.pageX +'px';
 
-   menuCursor.style.top = e.pageY +'px';
-})
+   cursorM.style.top = e.pageY +'px';
+}) */
 
   /*  CURSOR MENU */
 
