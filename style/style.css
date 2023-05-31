@@ -9,7 +9,7 @@ header {
 }
 header .navBar {
   max-width: 1000px;
-  padding: 0.6rem 0;
+  padding: 0.7rem 0;
   margin-inline: auto;
   display: flex;
   flex: 1;
@@ -33,15 +33,14 @@ header .navBar .nav .navButton {
   background-color: rgba(0, 0, 0, 0);
   overflow-x: hidden;
   border: none;
-  border-radius: 50%;
-  width: 3.4rem;
-  height: 3.4rem;
+  width: 2.4rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 header .navBar .nav .navButton .line {
-  width: 60%;
+  width: 100%;
   border-radius: 10px;
   height: 1px;
   background-color: #000000;
@@ -112,8 +111,8 @@ header .navBar .menuContainr .menu .linksContainerMenu a {
   align-self: end;
   text-decoration: none;
   line-height: 2rem;
-  color: aliceblue;
-  border-bottom: 1px solid aliceblue;
+  color: #E2E2E2;
+  border-bottom: 1px solid #E2E2E2;
   width: 200px;
   transition-duration: 0.4s;
 }
@@ -256,6 +255,13 @@ body main .outContainer {
   max-width: 1000px;
   margin-inline: auto;
 }
+body main .entSection .imgContainer {
+  display: flex;
+  justify-content: start;
+}
+body main .entSection .imgContainer img {
+  margin-left: -25px;
+}
 body main .anfebotsSatzOben {
   border-bottom: 1px solid #c0c0c0;
   padding: 1rem 0;
@@ -293,8 +299,9 @@ body main .infosSContainer .infosS {
 body main .infosSContainer .infosS div {
   box-shadow: 11px 11px 22px #c0c0c0, -11px -11px 22px #ffffff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   /* border: 1px solid #c0c0c0; */
   border-radius: 50%;
   height: 170px;
@@ -302,20 +309,15 @@ body main .infosSContainer .infosS div {
   position: relative;
 }
 body main .infosSContainer .infosS div .iconForInfos {
-  position: absolute;
   backdrop-filter: blur(10px);
-  height: 40px;
-  width: 40px;
-  top: 10px;
-  left: 40%;
-  border-radius: 50%;
-  /*  transform: skew(-.2rad); */
 }
-body main .infosSContainer .infosS div .iconForInfos p {
-  color: #424242;
+body main .infosSContainer .infosS div .iconForInfos img {
+  width: 40PX;
 }
 body main .infosSContainer .infosS div p {
+  font-size: 0.8rem;
   max-width: 20ch;
+  height: 4ch;
   text-align: center;
   color: #424242;
 }

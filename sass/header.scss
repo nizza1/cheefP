@@ -16,24 +16,21 @@ header {
             font-weight: 100;
         }
         max-width: $max-width;
-        padding: .6rem 0 ;
+        padding: .7rem 0 ;
         margin-inline: auto;
         @include flex(1, row, space-between, center, nowrap);
         .nav{
             max-width: $max-width;
             position: reletive;
         .navButton {
-        
             background-color: #00000000;
             overflow-x: hidden;
             border: none;
-            border-radius: 50%;
-            width: 3.4rem;
-            height: 3.4rem;
+            width: 2.4rem;
+            height: 3rem;
             @include flexCenter();
-            
             .line {
-                width: 60%;
+                width: 100%;
                 border-radius: 10px;
                 height: 1px;
                 background-color:$primary-color;
@@ -108,8 +105,8 @@ header {
                 align-self: end;
                 text-decoration: none;
                 line-height: 2rem;
-                color: aliceblue;
-                border-bottom: 1px solid aliceblue;
+                color: $primary-background;
+                border-bottom: 1px solid $primary-background;
                 width: 200px;
                 transition-duration: .4s;
             }
