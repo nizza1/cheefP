@@ -148,17 +148,22 @@ footer {
 footer article {
   max-width: 1000px;
   margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 footer article nav {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  min-width: fit-content;
 }
 footer article nav .Links {
   text-decoration: none;
   color: #424242;
   position: relative;
-  margin-left: 1rem;
   transition-duration: 0.3s;
   border-bottom: 2px solid transparent;
   width: fit-content;
@@ -184,12 +189,78 @@ footer article nav .Links:hover::after {
   transform: translateY(0);
   background-color: #424242;
 }
+footer article div {
+  position: relative;
+  min-width: fit-content;
+}
+footer article div .contactDataFooter {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+footer article div .contactDataFooter li {
+  list-style: none;
+  /*  border-bottom: $primery-border; */
+  padding-bottom: 0.5rem;
+}
+footer article div .contactDataFooter li:last-of-type {
+  border-bottom: none;
+}
+footer article div .contactDataFooter li:last-of-type a {
+  text-decoration: none;
+  color: #424242;
+  position: relative;
+  transition-duration: 0.3s;
+  border-bottom: 2px solid transparent;
+}
+footer article div .contactDataFooter li:last-of-type a:hover {
+  transform: translateY(-3px);
+}
+footer article div .contactDataFooter li:last-of-type a::after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  /*    transform: translateX(-100%); */
+  transform: translateY(0.4rem);
+  transition-duration: 0.3s;
+  border-radius: 25px;
+}
+footer article div .contactDataFooter li:last-of-type a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  transform: translateY(0);
+  background-color: #424242;
+}
+
+.impressumPage {
+  margin: 9rem 0 0 0;
+}
+.impressumPage div {
+  padding-bottom: 1.2rem;
+}
+.impressumPage div h2 {
+  border-bottom: 1px solid #c0c0c0;
+  padding-bottom: 0.5rem;
+}
+.impressumPage div h3 {
+  padding: 0.4rem 0;
+}
+.impressumPage div p {
+  padding: 0.3rem 0;
+}
+.impressumPage div li {
+  padding: 0.3rem 0;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* cursor: url('../icons/cursor.svg'), move; */
+  font-weight: 200;
 }
 
 body {
@@ -214,6 +285,9 @@ body .cursorM {
 body a:hover ~ .cursorM {
   width: 4rem;
   height: 4rem;
+}
+body main {
+  min-height: 100vh;
 }
 body main .hero {
   background-image: url("../img/hero.jpg");

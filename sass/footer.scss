@@ -8,15 +8,20 @@ footer {
     article {
         max-width: $max-width;
         margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
         nav {
             display: flex;
             flex-direction: column;
             row-gap: 1rem;
+            min-width: fit-content;
             .Links {
                 text-decoration: none;
                 color: $font-light;
                 position: relative;
-                margin-left: 1rem;
                 transition-duration: .3s;
                 border-bottom: 2px solid transparent;
                 width: fit-content;
@@ -43,8 +48,56 @@ footer {
                 transform: translateX(0);
                 transform: translateY(0);
                 background-color: $font-light;
-            }
-            
+            } 
+        }
+        
+        div {
+            position: relative;
+            min-width: fit-content;
+            .contactDataFooter {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                
+                li {
+    
+                    list-style: none;
+                   /*  border-bottom: $primery-border; */
+                    padding-bottom: .5rem;
+                }
+                li:last-of-type {
+                    border-bottom: none;
+                    a {
+                        text-decoration: none;
+                        color: $font-light;
+                        position: relative;
+                        transition-duration: .3s;
+                        border-bottom: 2px solid transparent;
+                    }
+                    a:hover {
+                        transform: translateY(-3px);
+                    }
+        
+                    a::after {
+                        position: absolute;
+                        content: '';
+                        bottom: -3px;
+                        left: 0;
+                        height: 2px ;
+                        width: 100%;
+                     /*    transform: translateX(-100%); */
+                     transform: translateY(.4rem);
+                        transition-duration: .3s;
+                        border-radius: 25px;
+                    }
+                    a:hover::after {
+                        opacity: 1;
+                        transform: translateX(0);
+                        transform: translateY(0);
+                        background-color: $font-light;
+                    } 
+                }
+            } 
         }
     }
 }

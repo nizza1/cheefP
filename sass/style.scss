@@ -4,6 +4,9 @@
 @forward 'header';
 @forward 'footer';
 
+//Pages 
+@forward 'impressum';
+
 //import 
 
 
@@ -13,6 +16,7 @@
     padding: 0;
     box-sizing: border-box;
     /* cursor: url('../icons/cursor.svg'), move; */
+    font-weight: 200;
 }
 
 body {
@@ -41,7 +45,7 @@ body {
     }
 
     main {
-
+        min-height: 100vh;
         .hero {
             background-image: url('../img/hero.jpg');
             background-attachment: fixed;
