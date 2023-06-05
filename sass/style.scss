@@ -17,6 +17,7 @@
     box-sizing: border-box;
     /* cursor: url('../icons/cursor.svg'), move; */
     font-weight: 200;
+    color: $font-light
 }
 
 body {
@@ -47,15 +48,24 @@ body {
     main {
         min-height: 100vh;
         .hero {
-            background-image: url('../img/hero.jpg');
+            
+    /*         background-image: url('../img/heroImg/redcharlie-redcharlie1--nh7sIKGgAM-unsplash.jpg'); */
+        
+              background-image: url('../img/heroImg/dorian-mongel-5Rgr_zI7pBw-unsplash.jpg');
+
+       /*     background-image: url('../img/heroImg/dylan-mcleod-4zqvu9dyvSk-unsplash.jpg'); */
+            
+          /*   background-image: url('../img/heroImg/elias-e-8QOpH6i3eQI-unsplash.jpg'); */
+          
             background-attachment: fixed;
-            background-position: center;
+            background-position-x: center;
+            background-position-y: center;
+            background-repeat: no-repeat;
             background-size: cover;
             height: 650px;
-
             display: flex;
             justify-content: start;
-            align-items: end;
+            align-items: center;
             position: relative;
             z-index: 5;
             .heroBlur {
@@ -65,27 +75,16 @@ body {
                 z-index: 7;
             }
            .heroTitleContainer {
-            max-width: 1000px;
+            background-image: url('../img/heroImg/optma-min.png');
+         
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position: center left;
             width: 100%;
+            max-width: $max-width;
             margin-inline: auto;
-        
-            h1 {
-                font-size: 3rem;
-                line-height: 3.4rem;
-                letter-spacing: .2rem;
-                color: #000; 
-                z-index: 10;
-                position: relative;
-              
-                padding: 1rem;
-               color: aliceblue;
-               background-color: #000;
-               //background: rgb(0, 55, 255);
-               display: inline-block;
-               margin: auto;
-            
-
-            }
+            height: 330px;
+            z-index: 8;
            }
 
 

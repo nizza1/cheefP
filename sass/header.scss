@@ -109,6 +109,7 @@ header {
                 border-bottom: 1px solid $primary-background;
                 width: 200px;
                 transition-duration: .4s;
+                letter-spacing: $letterSpacing;
             }
 
             a:hover {

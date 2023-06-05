@@ -115,6 +115,7 @@ header .navBar .menuContainr .menu .linksContainerMenu a {
   border-bottom: 1px solid #E2E2E2;
   width: 200px;
   transition-duration: 0.4s;
+  letter-spacing: 0.3rem;
 }
 header .navBar .menuContainr .menu .linksContainerMenu a:hover {
   padding-left: 2rem;
@@ -261,6 +262,7 @@ footer article div .contactDataFooter li:last-of-type a:hover::after {
   box-sizing: border-box;
   /* cursor: url('../icons/cursor.svg'), move; */
   font-weight: 200;
+  color: #424242;
 }
 
 body {
@@ -290,14 +292,19 @@ body main {
   min-height: 100vh;
 }
 body main .hero {
-  background-image: url("../img/hero.jpg");
+  /*         background-image: url('../img/heroImg/redcharlie-redcharlie1--nh7sIKGgAM-unsplash.jpg'); */
+  background-image: url("../img/heroImg/dorian-mongel-5Rgr_zI7pBw-unsplash.jpg");
+  /*     background-image: url('../img/heroImg/dylan-mcleod-4zqvu9dyvSk-unsplash.jpg'); */
+  /*   background-image: url('../img/heroImg/elias-e-8QOpH6i3eQI-unsplash.jpg'); */
   background-attachment: fixed;
-  background-position: center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 650px;
   display: flex;
   justify-content: start;
-  align-items: end;
+  align-items: center;
   position: relative;
   z-index: 5;
 }
@@ -308,22 +315,15 @@ body main .hero .heroBlur {
   z-index: 7;
 }
 body main .hero .heroTitleContainer {
-  max-width: 1000px;
+  background-image: url("../img/heroImg/optma-min.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
   width: 100%;
+  max-width: 1000px;
   margin-inline: auto;
-}
-body main .hero .heroTitleContainer h1 {
-  font-size: 3rem;
-  line-height: 3.4rem;
-  letter-spacing: 0.2rem;
-  color: #000;
-  z-index: 10;
-  position: relative;
-  padding: 1rem;
-  color: aliceblue;
-  background-color: #000;
-  display: inline-block;
-  margin: auto;
+  height: 330px;
+  z-index: 8;
 }
 body main .outContainer {
   max-width: 1000px;
