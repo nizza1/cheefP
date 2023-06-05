@@ -1,0 +1,63 @@
+@use 'global' as * ;
+@use 'mixin' as * ;
+
+
+.referencPage {
+    margin: 9rem 0 0 0;
+
+    .referencMenu {
+            .radio-inputs {
+                margin: 1rem 0;
+                flex-wrap: wrap;
+                position: relative;
+                display: flex;
+                border-radius: 0.5rem;
+                background-color: $primary-background;
+                padding: .5rem;
+               /*  padding: 0.25rem; */
+                @include boxShadow;
+                .radio:last-of-type {
+                    border-right: none;
+                }
+                .radio {
+                    flex: 1 1 auto;
+                    text-align: center;
+                    border-right: $primery-border;
+                    input {
+                        display: none;
+                    }
+                    
+                      input:checked + .name:after {
+                        position: absolute;
+                        bottom: 0;
+                        content: '';
+                        text-align: start;
+                        height: 2px ;
+                        border-radius: 1rem;
+                        width: 100%;
+                        background-color: $color-highlight;
+                      }
+
+                    .name {
+                        position: relative;
+                        display: flex;
+                        cursor: pointer;
+                        align-items: center;
+                        justify-content: center;
+                        border: none;
+                        padding: .9rem 0;
+                        transition: all .15s ease-in-out;
+                      }
+                  }
+              }
+
+            .displayReference {
+               margin-top: 2rem;
+                min-height: 500px;
+                border: $primery-border;
+                border-radius: .5rem;
+                display: flex;
+                flex-direction: column;
+            }
+    }
+}

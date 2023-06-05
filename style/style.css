@@ -256,6 +256,60 @@ footer article div .contactDataFooter li:last-of-type a:hover::after {
   padding: 0.3rem 0;
 }
 
+.referencPage {
+  margin: 9rem 0 0 0;
+}
+.referencPage .referencMenu .radio-inputs {
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  border-radius: 0.5rem;
+  background-color: #E2E2E2;
+  padding: 0.5rem;
+  /*  padding: 0.25rem; */
+  box-shadow: 11px 11px 22px #c0c0c0, -11px -11px 22px #ffffff;
+}
+.referencPage .referencMenu .radio-inputs .radio:last-of-type {
+  border-right: none;
+}
+.referencPage .referencMenu .radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+  border-right: 1px solid #c0c0c0;
+}
+.referencPage .referencMenu .radio-inputs .radio input {
+  display: none;
+}
+.referencPage .referencMenu .radio-inputs .radio input:checked + .name:after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  text-align: start;
+  height: 2px;
+  border-radius: 1rem;
+  width: 100%;
+  background-color: #002AFF;
+}
+.referencPage .referencMenu .radio-inputs .radio .name {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0.9rem 0;
+  transition: all 0.15s ease-in-out;
+}
+.referencPage .referencMenu .displayReference {
+  margin-top: 2rem;
+  min-height: 500px;
+  border: 1px solid #c0c0c0;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   margin: 0;
   padding: 0;
