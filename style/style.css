@@ -142,7 +142,7 @@ header .navBar .menuContainerOpen {
 }
 
 footer {
-  background-color: #E2E2E2;
+  background-color: #000000;
   padding: 2rem 0;
   border-top: 1px solid #000000;
 }
@@ -163,7 +163,7 @@ footer article nav {
 }
 footer article nav .Links {
   text-decoration: none;
-  color: #424242;
+  color: #E2E2E2;
   position: relative;
   transition-duration: 0.3s;
   border-bottom: 2px solid transparent;
@@ -203,13 +203,14 @@ footer article div .contactDataFooter li {
   list-style: none;
   /*  border-bottom: $primery-border; */
   padding-bottom: 0.5rem;
+  color: #E2E2E2;
 }
 footer article div .contactDataFooter li:last-of-type {
   border-bottom: none;
 }
 footer article div .contactDataFooter li:last-of-type a {
   text-decoration: none;
-  color: #424242;
+  color: #E2E2E2;
   position: relative;
   transition-duration: 0.3s;
   border-bottom: 2px solid transparent;
@@ -257,7 +258,7 @@ footer article div .contactDataFooter li:last-of-type a:hover::after {
 }
 
 .referencPage {
-  margin: 9rem 0 0 0;
+  margin: 7rem 0 0 0;
 }
 .referencPage .referencMenu .radio-inputs {
   margin: 1rem 0;
@@ -280,6 +281,9 @@ footer article div .contactDataFooter li:last-of-type a:hover::after {
 }
 .referencPage .referencMenu .radio-inputs .radio input {
   display: none;
+}
+.referencPage .referencMenu .radio-inputs .radio input:checked + .name {
+  transform: translateY(0.2rem);
 }
 .referencPage .referencMenu .radio-inputs .radio input:checked + .name:after {
   position: absolute;
@@ -304,13 +308,58 @@ footer article div .contactDataFooter li:last-of-type a:hover::after {
 .referencPage .referencMenu .displayReference {
   margin-top: 2rem;
   min-height: 500px;
+  max-height: 100vh;
+  overflow-y: auto;
   border: 1px solid #c0c0c0;
   border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.referencPage .referencMenu .displayReference article {
+  width: 100%;
+  display: none;
+}
+.referencPage .referencMenu .displayReference article .referencCard {
+  border: 1px solid #c0c0c0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: rgb(222, 222, 222);
+  margin-bottom: 1rem;
+}
+.referencPage .referencMenu .displayReference article .referencCard img {
+  min-width: 120px;
+  max-width: 180px;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+}
+.referencPage .referencMenu .displayReference article .referencCard .referencTextContainer {
+  /*  max-width: 70%; */
+  padding: 1rem 1rem 1rem 0;
   display: flex;
   flex-direction: column;
+  row-gap: 0.4rem;
+}
+.referencPage .referencMenu .displayReference article .referencCard .referencTextContainer p {
+  border-bottom: 1px solid #c0c0c0;
+  padding-bottom: 0.4rem;
+}
+.referencPage .referencMenu .displayReference article .referencCard .referencTextContainer p:last-of-type {
+  border-bottom: none;
+}
+.referencPage .referencMenu .displayReference .maschienenGroup {
+  background-color: yellow;
+}
+.referencPage .referencMenu .displayReference .stahlGroup {
+  background-color: green;
+}
+.referencPage .referencMenu .displayReference .gussGroup {
+  background-color: black;
 }
 
 * {
+  font-family: helvetica;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -346,10 +395,7 @@ body main {
   min-height: 100vh;
 }
 body main .hero {
-  /*         background-image: url('../img/heroImg/redcharlie-redcharlie1--nh7sIKGgAM-unsplash.jpg'); */
   background-image: url("../img/heroImg/dorian-mongel-5Rgr_zI7pBw-unsplash.jpg");
-  /*     background-image: url('../img/heroImg/dylan-mcleod-4zqvu9dyvSk-unsplash.jpg'); */
-  /*   background-image: url('../img/heroImg/elias-e-8QOpH6i3eQI-unsplash.jpg'); */
   background-attachment: fixed;
   background-position-x: center;
   background-position-y: center;
@@ -369,7 +415,7 @@ body main .hero .heroBlur {
   z-index: 7;
 }
 body main .hero .heroTitleContainer {
-  background-image: url("../img/heroImg/optma-min.png");
+  /*      background-image: url('../img/heroImg/optma-min.png'); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center left;
@@ -378,6 +424,17 @@ body main .hero .heroTitleContainer {
   margin-inline: auto;
   height: 330px;
   z-index: 8;
+}
+body main .hero .heroTitleContainer .angebotsSatzOben {
+  padding: 1rem 0;
+}
+body main .hero .heroTitleContainer .angebotsSatzOben .titleHighlight {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+body main .hero .heroTitleContainer .angebotsSatzOben h1 {
+  color: #fff;
+  font-size: 2rem;
 }
 body main .outContainer {
   max-width: 1000px;
@@ -390,20 +447,8 @@ body main .entSection .imgContainer {
 body main .entSection .imgContainer img {
   margin-left: -25px;
 }
-body main .anfebotsSatzOben {
-  border-bottom: 1px solid #c0c0c0;
-  padding: 1rem 0;
-  margin: 3rem 0rem;
-  background-color: #E2E2E2;
-}
-body main .anfebotsSatzOben h1 {
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: #424242;
-  /* text-align: center; */
-}
 body main .infosSContainer {
-  padding-bottom: 3rem;
+  padding: 3rem 0;
   display: flex;
   flex-direction: column;
   row-gap: 3rem;

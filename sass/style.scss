@@ -10,15 +10,16 @@
 
 //import 
 
-
 //Global values 
 *{
+    font-family: helvetica;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* cursor: url('../icons/cursor.svg'), move; */
     font-weight: 200;
-    color: $font-light
+    color: $font-light;
+
 }
 
 body {
@@ -50,13 +51,10 @@ body {
         min-height: 100vh;
         .hero {
             
-    /*         background-image: url('../img/heroImg/redcharlie-redcharlie1--nh7sIKGgAM-unsplash.jpg'); */
         
               background-image: url('../img/heroImg/dorian-mongel-5Rgr_zI7pBw-unsplash.jpg');
 
-       /*     background-image: url('../img/heroImg/dylan-mcleod-4zqvu9dyvSk-unsplash.jpg'); */
-            
-          /*   background-image: url('../img/heroImg/elias-e-8QOpH6i3eQI-unsplash.jpg'); */
+
           
             background-attachment: fixed;
             background-position-x: center;
@@ -76,7 +74,7 @@ body {
                 z-index: 7;
             }
            .heroTitleContainer {
-            background-image: url('../img/heroImg/optma-min.png');
+       /*      background-image: url('../img/heroImg/optma-min.png'); */
          
             background-size:contain;
             background-repeat: no-repeat;
@@ -86,6 +84,23 @@ body {
             margin-inline: auto;
             height: 330px;
             z-index: 8;
+            .angebotsSatzOben {
+                padding: 1rem 0;
+
+                .titleHighlight {
+                    font-size: 3rem;
+                    padding-bottom: 2rem;
+
+                 }
+             
+     
+                  h1 {
+                     color: #fff;
+                     font-size: 2rem;
+
+                  }
+           
+             }
            }
 
 
@@ -107,22 +122,8 @@ body {
             }
         }
 
-        .anfebotsSatzOben {
-            border-bottom: $primery-border;
-           padding: 1rem 0;
-           margin: 3rem 0rem;
-           
-           background-color: $box-background ;
-
-             h1 {
-                @include title;
-                /* text-align: center; */
-             }
-      
-        }
-
         .infosSContainer {
-            padding-bottom: 3rem;
+            padding: 3rem 0;
 
             display: flex;
             flex-direction: column;

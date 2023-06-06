@@ -41,3 +41,29 @@ document.addEventListener('mousemove', (e)=> {
   /*  CURSOR MENU */
 
 /* Background animation hero */
+
+//referencPage 
+
+  // Get the radio buttons and articles elements
+const radios = document.querySelectorAll('.radio-inputs input[type="radio"]');
+
+const articles = document.querySelectorAll('.displayReference article');
+
+// Show the first article by default
+articles[0].style.display = 'block';
+
+
+radios.forEach(radio => {
+   radio.addEventListener('change', () => {
+
+     const value = radio.value;
+ 
+     articles.forEach(article => {
+       article.style.display = article.dataset.value === value ? 'block' : 'none';
+     });
+   });
+ });
+
+
+
+//referencPage 

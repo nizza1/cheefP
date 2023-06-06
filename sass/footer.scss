@@ -2,7 +2,7 @@
 @use 'global' as * ;
 
 footer {
-    background-color: $primary-background;
+    background-color: $primary-color;
     padding: 2rem 0;
     border-top: 1px solid $primary-color;
     article {
@@ -20,7 +20,7 @@ footer {
             min-width: fit-content;
             .Links {
                 text-decoration: none;
-                color: $font-light;
+                color: $primary-background;
                 position: relative;
                 transition-duration: .3s;
                 border-bottom: 2px solid transparent;
@@ -64,12 +64,13 @@ footer {
                     list-style: none;
                    /*  border-bottom: $primery-border; */
                     padding-bottom: .5rem;
+                    color: $primary-background;
                 }
                 li:last-of-type {
                     border-bottom: none;
                     a {
                         text-decoration: none;
-                        color: $font-light;
+                        color: $primary-background;
                         position: relative;
                         transition-duration: .3s;
                         border-bottom: 2px solid transparent;
