@@ -1,4 +1,5 @@
 @use 'mixin' as * ;
+@use 'stylingMix' as * ;
 @use 'global' as * ;
 
 footer {
@@ -7,6 +8,9 @@ footer {
     border-top: 1px solid $primary-color;
     article {
         max-width: $max-width;
+        @media (max-width: $max-width) {
+            padding-inline: 1.2rem;
+          }
         margin-inline: auto;
         display: flex;
         justify-content: space-between;

@@ -1,5 +1,6 @@
 //import 
 @use 'mixin' as * ;
+@use 'stylingMix' as * ;
 @use 'global' as *;
 @forward 'header';
 @forward 'footer';
@@ -16,9 +17,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* cursor: url('../icons/cursor.svg'), move; */
     font-weight: 200;
-    color: $font-light;
+    color: $primary-color;
 
 }
 
@@ -29,39 +29,19 @@ body {
     /* cursor: none; */
     scroll-behavior: smooth;
     overscroll-behavior: none;
-    .cursorM {
-        
-        position: absolute;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        background-color: rgb(0, 0, 0);
-        border: 2px solid aliceblue;
-        z-index: 1000;
-        transform: translate(-50%,-50%);
-        pointer-events: none;
-        
-    }
-    a:hover ~ .cursorM {
-        width: 4rem;
-        height: 4rem;
-    }
 
     main {
         min-height: 100vh;
         .hero {
-            
-        
+            overflow-y: hidden;
+            padding-bottom: $section-padding;
               background-image: url('../img/heroImg/dorian-mongel-5Rgr_zI7pBw-unsplash.jpg');
-
-
-          
             background-attachment: fixed;
             background-position-x: center;
             background-position-y: center;
             background-repeat: no-repeat;
             background-size: cover;
-            height: 650px;
+            height: 800px;
             display: flex;
             justify-content: start;
             align-items: center;
@@ -69,12 +49,12 @@ body {
             z-index: 5;
             .heroBlur {
                 width: 100%;
-                height: 100%;
+                height: 120%;
                 position: absolute;
                 z-index: 7;
             }
            .heroTitleContainer {
-       /*      background-image: url('../img/heroImg/optma-min.png'); */
+         /*  background-image: url('../img/heroImg/optma-min.png');  */
          
             background-size:contain;
             background-repeat: no-repeat;
@@ -85,15 +65,12 @@ body {
             height: 330px;
             z-index: 8;
             .angebotsSatzOben {
-                padding: 1rem 0;
+                @include primeryButtonDark ;
 
                 .titleHighlight {
-                    font-size: 3rem;
-                    padding-bottom: 2rem;
-
+                    font-size: 2.8rem;
                  }
              
-     
                   h1 {
                      color: #fff;
                      font-size: 2rem;
@@ -110,28 +87,23 @@ body {
         .outContainer {
             max-width: $max-width;
             margin-inline: auto;
+            @media (max-width: $max-width) {
+                padding-inline: 1.2rem;
+              }
         }
-        .entSection{
-            .imgContainer {
-                display: flex;
-                justify-content: start;
 
-                img {
-                    margin-left: -25px;
-                }
-            }
-        }
 
         .infosSContainer {
-            padding: 3rem 0;
-
+            padding: $section-paddingL 0;
             display: flex;
             flex-direction: column;
             row-gap: 3rem;
             h1 {
-                @include titleL;
+                @include titleLarg($primary-color);
                 line-height: 1.5;
+                
                 span {
+                    @include titleMedium($primary-color);
                     line-height: 1.5;
                     display: inline-block;
                 }
@@ -139,68 +111,75 @@ body {
             }
             .infosS {
                 display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                
+                justify-content: center;
+                flex-wrap: wrap-reverse;
+                row-gap: $spacing-larg;
+                column-gap: 3rem;
                 div {
-                    @include boxShadow;
+                    border-top: 1px solid $primary-color;
                     display: flex;
                     flex-direction: column;
+                    width: 300px;
+                    row-gap: 3rem;
                     align-items: center;
-                    justify-content: center;
-                    /* border: 1px solid #c0c0c0; */
-                    border-radius: 50%;
-                    height: 170px;
-                    width: 170px;
-                    position: relative;
+                    justify-content: start;
+                    padding-top: 3rem;
+        
                     .iconForInfos {
-                        @include blurS;
+                        position: relative;
+                        z-index: 4;
+                        width: 70px;
                         img {
-                            width: 40PX;
+                            position: relative;
+                            width: 70PX;
+                           z-index: 4;
                         }
                     }
-                    p{
-                        font-size: $fontSizeS;
-                        max-width: 20ch;
-                        height: 4ch;
-                        text-align: center;
-                        color: $font-light;
+                    .iconForInfos:after {
+                        @include icon-background($primary-color);
                     }
+
+                    p{
+                        @include icon-description($primary-color);
+                        max-width: 20ch;
+                        max-width: 300px;
+                        text-align: center;
+                        z-index: 3;
+                    }
+    
                 }
             }
         }
 
 
-        .place {
+        .imageTextOutContainer {
+            margin-top: $spacing-larg;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            height: 100vh;
             width: 100%;
-            padding: 1rem;
-            padding-top: 2rem;
-           
-            .chaild {
+            .textImgContainer {
                 display: flex;
                 flex-wrap: wrap;
-                padding: 2rem;
                 width: 100%;
-                max-width: $max-width;
-                height: fit-content;
-                border-radius: 40px;
-                background: #E2E2E2;
-                box-shadow:  11px 11px 22px #c0c0c0,
-             -11px -11px 22px #ffffff;
-             .textContainerHomeBox {
+    
+             .textContainer {
+                min-width: 40%;
                 max-width: 60ch;
-                border-right: $primery-border;
-                padding-right: 1rem;
                 h2 {
-                    @include titleL()
+                   /*  @include titleSmall($primary-color); */
+                   @include titleMedium($primary-color)
                 }
                 p {
                     font-weight: 200;
                 }
+             }
+
+             .imgContainer {
+                min-width: 40%;
+                display:flex;
+                justify-content: center;
+                align-items: center;
              }
       
             } 
