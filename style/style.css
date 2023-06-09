@@ -348,7 +348,7 @@ footer article div .contactDataFooter li:last-of-type a:hover::after {
   width: 100%;
   display: flex;
   padding: 1rem;
-  background-color: blanchedalmond;
+  background-color: rgb(164, 127, 72);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
