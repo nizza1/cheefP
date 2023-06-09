@@ -42,6 +42,65 @@ document.addEventListener('mousemove', (e)=> {
 
 /* Background animation hero */
 
+//Slider Global 
+const imgSliderWrapper = document.querySelector('.imgSliderWrapper');
+const imgSlider = document.querySelector('.imgSlider');
+const nextButton = document.querySelector('.nextButton');
+const prevButton = document.querySelector('.prevButton');
+
+nextButton.addEventListener('click', scrollToNextElement );
+prevButton.addEventListener('click', scrollToPreviousElement);
+
+function scrollToNextElement() {
+   // Get the currently visible element inside the container
+   const visibleElement = getVisibleElement(imgSlider);
+
+   // Calculate the next element's scroll position relative to the container
+   const nextElement = visibleElement.nextElementSibling;
+   if (nextElement) {
+     const scrollOffset = nextElement.offsetLeft - imgSlider.offsetLeft;
+     imgSlider.scroll({
+       left: scrollOffset,
+       behavior: 'smooth',
+     });
+   }
+ }
+
+ function scrollToPreviousElement() {
+   // Get the currently visible element inside the container
+   const visibleElement = getVisibleElement(imgSlider);
+
+   const previousElement = visibleElement.previousElementSibling;
+  if (previousElement) {
+    const scrollOffset = previousElement.offsetLeft - imgSlider.offsetLeft;
+    imgSlider.scroll({
+      left: scrollOffset,
+      behavior: 'smooth',
+    });
+  }
+ }
+ 
+function getVisibleElement(container) {
+   // Get all the child elements of the container
+   const children = container.children;
+ 
+   // Loop through the child elements and find the one that is currently visible
+   for (let i = 0; i < children.length; i++) {
+     const child = children[i];
+     const rect = child.getBoundingClientRect();
+ 
+     // Check if the child element is visible
+     if (rect.left >= 0 && rect.right <= window.innerWidth) {
+       return child;
+     }
+   }
+}
+
+
+//Slider Global 
+
+
+
 //referencPage 
 
   // Get the radio buttons and articles elements
